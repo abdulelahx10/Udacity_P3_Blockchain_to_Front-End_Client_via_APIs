@@ -1,4 +1,3 @@
-//const SHA256 = require('crypto-js/sha256');
 const Joi = require('joi');
 const Block = require('./Block.js');
 const BlockChain = require('./Blockchain.js');
@@ -14,9 +13,7 @@ class BlockController {
      */
     constructor(server) {
         this.server = server;
-        //this.blocks = [];
         this.myBlockChain = new BlockChain.Blockchain();
-        //this.initializeMockData();
         this.getBlockByIndex();
         this.postNewBlock();
     }
