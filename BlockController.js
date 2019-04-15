@@ -44,7 +44,8 @@ class BlockController {
             path: '/block',
             handler: async (request, h) => {
                 let block = new Block.Block(request.payload.body);
-                return await this.myBlockChain.addBlock(block);
+                let blockProm = await this.myBlockChain.addBlock(block);
+                return JSON.parse(blockProm);
             },
             options: {
                 validate: {
